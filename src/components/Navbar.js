@@ -1,4 +1,7 @@
 import React from "react";
+import {
+  Link,
+} from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -88,8 +91,8 @@ export default function Navbar() {
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {/* <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" --> */}
-                  <a
-                    href="#"
+                  <Link
+                    to={"/projects"}
                     class="
                       inline-flex
                       items-center
@@ -102,7 +105,7 @@ export default function Navbar() {
                     "
                   >
                     Projects
-                  </a>
+                  </Link>
                   <a
                     href="#"
                     class="
@@ -155,8 +158,8 @@ export default function Navbar() {
           <div class="sm:hidden" id="mobile-menu">
             <div class="space-y-1 pt-2 pb-4">
               {/* <!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" --> */}
-              <a
-                href="#"
+              <Link
+                to={"/projects"}
                 class="
                   block
                   border-l-4 border-indigo-500
@@ -170,7 +173,7 @@ export default function Navbar() {
                 "
               >
                 Projects
-              </a>
+              </Link>
               <a
                 href="#"
                 class="

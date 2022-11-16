@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import AuthorCard from "./components/AuthorCard";
@@ -8,6 +9,10 @@ import EducationCard from "./components/EducationCard";
 import HobbiesCard from "./components/HobbiesCard";
 
 function App() {
+  const [isActive, setIsActive] = useState({
+    active: true,
+    name: "education",
+  });
   return (
     <>
       <Navbar />
@@ -16,13 +21,13 @@ function App() {
         <main>
           <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 
-            <AuthorCard />
+            <AuthorCard  {...{isActive, setIsActive}}/>
 
-            <WorkCard />
+            {
+              isActive.name === "work" ? 
+                <WorkCard /> : isActive.name === "education" ? <EducationCard /> : <HobbiesCard />
+            }
 
-            <EducationCard />
-
-            <HobbiesCard />
           </div>
 
           {/* <!-- /End replace --> */}
